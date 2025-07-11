@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Bhumika 🦆</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- AOS Scroll Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(120deg, #fdf6f0, #e8f9f3);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+      color: #333;
+      text-align: center;
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      padding: 30px 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .typing {
+      display: inline-block;
+      border-right: 3px solid #555;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 4s steps(40, end), blink .8s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+
+    .subtext {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      color: #555;
+    }
+
+    .message {
+      background: #fff8f0;
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .photo-section img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .wishes {
+      text-align: left;
+    }
+
+    .wish {
+      background: #f0f9ff;
+      padding: 15px;
+      margin: 10px 0;
+      border-left: 5px solid #70c1b3;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .wish:hover {
+      transform: scale(1.02);
+    }
+
+    .btn {
+      background-color: #a0c4ff;
+      border: none;
+      padding: 12px 25px;
+      margin: 10px auto;
+      border-radius: 8px;
+      font-size: 1rem;
+      color: #fff;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #999;
+    }
+
+    @media screen and (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .message {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="confetti-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"></canvas>
+
+  <div class="container" data-aos="fade-up">
+    <h1><span class="typing">Happy Birthday Drama Queen 🦆</span></h1>
+    <p class="subtext">Here's to a day filled with cake, chaos, and cute drama.</p>
+
+    <div class="message" data-aos="zoom-in">
+      May your eyeliner be sharp, your drama sharper, and your birthday cake bigger than your height.
+    </div>
+
+    <div class="photo-section" data-aos="fade-up">
+      <img src="hapibdaypic.jpg" alt="Bhumika's Photo" />
+    </div>
+
+    <h2 data-aos="fade-up">Wishes from Friends 🎈</h2>
+    <div class="wishes">
+      <div class="wish" data-aos="fade-right">"You're like a walking TV serial—loud, dramatic, addictive, and somehow... always the main character." - Friend 1(me)</div>
+      <div class="wish" data-aos="fade-left">"Keep slaying and quacking 🦆" - Friend 2(also me)</div>
+      <div class="wish" data-aos="fade-right">"Happy Birthday, you walking emoji! 🦆" - Friend 3(again me)</div>
+    </div>
+
+    <button class="btn" onclick="copyLink()">📤 Share this page</button>
+    <button class="btn" onclick="playMusic()">🎵 Play Birthday Vibes</button>
+
+    <div class="footer" data-aos="fade-up">
+      Made with ✨ and by 'one and only' Pankaj 🦾
+    </div>
+  </div>
+
+  <!-- Confetti JS -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    const confettiCanvas = document.getElementById('confetti-canvas');
+    const myConfetti = confetti.create(confettiCanvas, { resize: true, useWorker: true });
+
+    window.onload = () => {
+      myConfetti({
+        particleCount: 180,
+        spread: 150,
+        origin: { y: 0.6 },
+        shapes: ['circle'],
+        colors: ['#ffcad4', '#caffbf', '#bdb2ff', '#ffd6a5']
+      });
+    };
+  </script>
+
+  <!-- AOS Scroll Animation -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ duration: 1000 });</script>
+
+  <!-- Music & Share -->
+  <script>
+    function playMusic() {
+      const audio = new Audio('hapibday.m4a');
+      audio.play();
+    }
+
+    function copyLink() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        alert('Link copied to clipboard!');
+      });
+    }
+  </script>
+</body>
+</html>
